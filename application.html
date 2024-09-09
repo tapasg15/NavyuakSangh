@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+    <style>
+         body{
+          background-image: url('octo.jpg');
+          background-size: cover;
+        }
+        h1 {
+            font-family: Arial, sans-serif;
+            /* Specify font family */
+            font-size: 32px;
+            /* Adjust font size */
+            color: #44147e;
+            /* Set text color */
+            text-align: center;
+            /* Center align text */
+            margin-bottom: 20px;
+            /* Add margin below heading */
+            border: 2px solid #ba1616;
+            /* Border style */
+            padding: 10px 20px;
+            /* Padding inside the border */
+            border-radius: 8px;
+            /* Rounded corners */
+        }
+
+        .submit-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
+            /* Gradient background */
+            border: none;
+            border-radius: 25px;
+            /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Shadow effect */
+            cursor: pointer;
+            outline: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            /* Smooth transition */
+        }
+
+        /* Hover effect */
+        .submit-button:hover {
+            background: linear-gradient(to right, #8f94fb, #4e54c8);
+            /* Reverse gradient on hover */
+            transform: translateY(-2px);
+            /* Move button up slightly on hover */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            /* Increase shadow on hover */
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #45a963;
+            border-radius: 8px;
+
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+
+        .upload-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #3b1070;
+            /* Blue background color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .upload-button:hover {
+            background-color: #350d70;
+            /* Darker blue on hover */
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file -->
+
+</head>
+
+<body>
+    <h1>⁍ Application Form ⁌</h1>
+    <form action="submit-form.js" method="POST">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name" style="opacity: 0.5;">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="name">Father's Name:</label>
+            <input type="text" id="name" name="name" required style="opacity: 0.5;">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="name">Mother's Name:</label>
+            <input type="text" id="name" name="name" required style="opacity: 0.5;">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" rows="4" required placeholder="Your present address;" style="opacity: 0.5;"></textarea>
+        </div>
+        <br>
+        <div class="form-group">
+            <label>Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="class">Class:</label>
+            <input type="text" id="class" name="class" required placeholder="standard" style="opacity: 0.5;">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="school">School:</label>
+            <input type="text" id="school" name="school" required placeholder="School Name" style="opacity: 0.5;">
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required placeholder="e.g: 9935563299" style="opacity: 0.5;">
+
+            <div class="form-container">
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="id_proof" class="form-label" style="color: #330767;">Upload ID Proof:</label>
+                        <input type="file" id="id_proof" name="id_proof" accept=".pdf, .jpg, .png" required >
+
+                    </div>
+                    
+                    
+                    <p style="color: #f3eeee;">Note: Please Upload Any of Your id proof like School id/Aadhar</p>
+                </form>
+                <form action="fee.html" method="post">
+                    <button type="submit" class="submit-button">Submit</button >
+                    </form>
+                    
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Payment</title>
+    <style>
+        body{
+          background-image: url('octo.jpg');
+          background-size: cover;
+        }
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+    
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Fee Payment</h1>
+        <form action="/payment-process" method="post" id="paymentForm">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="class">Class/Standard:</label>
+                <select id="class" name="class" onchange="updateAmount()">
+                    <option value="">Select Class/Standard</option>
+                    <option value="2">Class 2</option>
+                    <option value="3">Class 3</option>
+                    <option value="4">Class 4</option>
+                    <option value="5">Class 5</option>
+                    <option value="6">Class 6</option>
+                    <option value="7">Class 7</option>
+                    <option value="8">Class 8</option>
+                    <option value="9">Class 9</option>
+                    <option value="10">Class 10</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" readonly>
+            </div>
+            <div class="form-group">
+                <label for="payment-method">Select Payment Method:</label>
+                <select id="payment-method" name="payment-method">
+                    <option value="">Select Payment Method</option>
+                    <option value="credit-card">Credit Card</option>
+                    <option value="debit-card">Debit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="upi-qr">UPI / QR</option>
+                </select>
+            </div>
+            
+            
+        </form>
+        <form action="pay.html" method="post">
+        <input type="submit" value="Pay Now">
+    </form>
+
+    </div>
+
+    <script>
+        function updateAmount() {
+            var classSelect = document.getElementById("class");
+            var amountInput = document.getElementById("amount");
+
+            if (classSelect.value === "2" || classSelect.value === "3" || classSelect.value === "4" ||
+                classSelect.value === "5" || classSelect.value === "6" || classSelect.value === "7") {
+                amountInput.value = "30"; // Set amount to 30 for classes 2 to 7
+            } else if (classSelect.value === "8" || classSelect.value === "9" || classSelect.value === "10") {
+                amountInput.value = "50"; // Set amount to 50 for classes 8 to 10
+            } else {
+                amountInput.value = ""; // Reset amount if no selection or invalid selection
+            }
+        }
+    </script>
+</body>
+</html>

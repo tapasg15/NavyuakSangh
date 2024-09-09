@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navyuak Sangh</title>
+    <style>
+        h1 {
+            opacity: 0.5;
+            background-color: aliceblue
+        }
+
+        h3 {
+            text-align: center;
+        }
+        h6{
+            text-align:end;
+            margin: top 100px;  
+        }
+
+        body {
+
+            background-image: url('octo.jpg');
+            background-size: cover;
+
+        }
+
+        .content {
+            width: 200px;
+            height: 100px;
+            background-color: #5a3737;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .slide-in {
+            transform: translateX(0);
+        }
+
+        .slide-out {
+            transform: translateX(100%);
+        }
+
+        .profile-container {
+            size: 20px;
+            margin-bottom: auto;
+            margin-top: auto;
+            max-height: 100px;
+        }
+
+        .button-container {
+            text-align: right;
+            display: flex;
+            justify-content: flex-end;
+            position: relative;
+        }
+
+        .button {
+            display: inline-flex;
+            padding: 10px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #2e275c;
+            text-decoration: none;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+            position: initial;
+            right: 0;
+            margin: 5px;
+            float: right;
+            margin-top: 10px;
+        }
+
+        /* Gradient button */
+        .gradient-button {
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
+            /* Gradient background */
+            box-shadow: 0 4px 6px rgba(6, 5, 5, 0.1);
+            /* Shadow effect */
+        }
+
+        .gradient-button {
+            background: linear-gradient(to right, #4e54c8, #8f94fb);
+            /* Gradient background */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Shadow effect */
+        }
+
+
+
+        .gradient-button:hover {
+            background: linear-gradient(to right, #8f94fb, #4e54c8);
+            /* Reverse gradient on hover */
+            transform: translateY(-2px);
+            /* Move button up slightly on hover */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            /* Increase shadow on hover */
+        }
+
+        .gradient-button:hover {
+            background: linear-gradient(to right, #8f94fb, #4e54c8);
+            /* Reverse gradient on hover */
+            transform: translateY(-2px);
+            /* Move button up slightly on hover */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            /* Increase shadow on hover */
+        }
+
+        /* Solid color button */
+        .solid-button {
+            background-color: #ff6347;
+            /* Coral */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Shadow effect */
+        }
+
+        .solid-button:hover {
+            background-color: #ff4832;
+            /* Darker coral on hover */
+            transform: translateY(-2px);
+            /* Move button up slightly on hover */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+            /* Increase shadow on hover */
+        }
+
+        .cont {
+            display: flex;
+            justify-content: flex-end;
+            /* Aligns items to the right */
+            text-decoration-line: underline;
+            text-align: start
+            
+        }
+
+        .photo-post {
+            display: flex;
+            align-items: flex-start;
+            /* Align items at the top initially */
+            margin-top: 10px;
+            /* Adjust the value to shift downward */
+           
+        }
+
+        .photo-post img {
+            margin-right: 10px;
+            /* Space between the photo and the text */
+            border-radius: 40%;
+        }
+        .photo-post p {
+            margin-top: 10px; /* Space between the image and text */
+            color: white; /* Text color */
+            font-size: 18px; /* Font size */
+            font-weight: bold; /* Bold text */
+            text-align: center; /* Center align text */
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Glowing effect */
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 5px; /* Rounded corners for background */
+            padding: 5px 10px; /* Padding around the text */
+    </style>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div class="log-container">
+    <a href="login.html" class="button gradient-button">Login</a>
+    <a href="register.html" class="button gradient-button">Register</a>
+</div>
+<h1 style="color:rgb(71, 80, 132)">महात्मा गांधी सामान्य ज्ञान परीक्षा</h1>
+<h3 style="color:#4e54c8, #8f94fb">-नवयुवक संघ</h3>
+
+
+
+<div class="container">
+    <!-- Profile Image -->
+    <div class="profile-container">
+        <img src="profile.png" alt="Profile Image" class="profile-image">
+    </div>
+    <div class="cont">
+        <div class="photo-post">
+            <img src="OIP.jpg" alt="Mr.Kritibas Bhokta" height="100px" width="auto">
+            <h6>Mr. Kritibas Bhokta</h6>
+            <p style="margin-top: 60px;">अध्यक्ष</p>
+            </div>
+    </div>
+    
+
+        <div class="cont">
+            <div class="photo-post">
+                <img src="examcontroller.png" alt="Mr.Ranjan Keshri" style="height: 100px;" width="auto">
+                <h6>Mr. Ranjan Keshri</h6>
+                <p style="margin-top: 60px;">परीक्षा नियंत्रक</p>
+            </div>
+        </div>
+        <div class="cont">
+            <div class="photo-post">
+                <img src="manik.png" alt="Mr.Manik Banerjee" style="height: 100px;" width="auto">
+                <h6>Mr. Manik Banerjee</h6>
+                <p style="margin-top: 60px;">कोषाध्यक्ष </p>
+            </div>
+
+
+    </div>
+
+    <div class=" button-container">
+        <a href="call.html" class="button gradient-button">e-connect</a><br><br>
+        <a href="chatbot.html" class="button gradient-button">Chat-bot</a><br><br>
+        <a href="mail.html" class="button gradient-button">@mail-support</a><br><br>
+        <a href="application.html" class="button gradient-button">Application Form</a><br><br>
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+
+    </body>
+
+</html>

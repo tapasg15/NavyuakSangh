@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Payment Method</title>
+    <link rel="stylesheet" href="pay.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <h2>Select Payment Method</h2>
+    
+    <div class="payment-options">
+        <label>
+            <input type="radio" name="paymentMethod" value="credit_card">
+            Credit Card
+        </label><br>
+        <label>
+            <input type="radio" name="paymentMethod" value="paypal">
+            PayPal
+        </label><br>
+        <label>
+            <input type="radio" name="paymentMethod" value="upi">
+            UPI / QR Code
+        </label><br>
+    </div>
+    <form action="pmnt.html" method="post">
+    <button id="payNowBtn">Pay Now</button>
+
+    <script src="pay.js"></script> <!-- Link to external JavaScript file -->
+</body>
+</html>
