@@ -4,24 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
+    
     <link rel="stylesheet" href="login.css">
     <script src="https://www.google.com/recaptcha/api.js"></script>
+    <style>
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #c2a3c8, #7f26cd); /* Dual-tone gradient */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(66, 25, 37, 0.6); /* Shadow effect */
+            margin: 20px;
+            text-align: center;
+        }
+
+        .login-button {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            background: linear-gradient(45deg, #e7589b, #ad3f17); /* Multi-color gradient */
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+            transition: background 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .login-button:hover {
+            background: linear-gradient(45deg, #b41062, #cf3c5e); /* Gradient direction reversed on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Slightly stronger shadow on hover */
+        }
+
+        .log-container{
+            background:transparent;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+        .log-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        .log-container input[type="text"],
+        .log-container input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .log-button:hover {
+            background: linear-gradient(45deg, #ffcc00, #ff6f61); /* Gradient direction reversed on hover */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Slightly stronger shadow on hover */
+
+    </style>
 </head>
 <body>
     <main>
         <h1>Login</h1>
-        <form action="login.php" method="post">
+        <div class="log-container">
+        
+        <form action="login.php" method="post" id="myForm">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required placeholder="username/email">
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required placeholder="password">
-
-            <!-- reCAPTCHA widget -->
-            <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
-
-            <button type="submit">Login</button>
-        </form>
+            <br>
+    
+</form>
+</div>
+<!-- Hidden Honey Pot Field -->
+    <div style="display:none;">
+        <label for="honeypot">Leave this field empty:</label>
+        <input type="text" id="honeypot" name="honeypot">
+    </div>
+    <button class="login-button">Login</button>
+        </div>
+        <script>
+document.getElementById('myForm').onsubmit = function() {
+    var honeypot = document.getElementById('honeypot').value;
+    if (honeypot) {
+        // Likely a bot submission
+        return false;
+    }
+    return true;
+};
+</script>
     </main>
 </body>
 </html>
